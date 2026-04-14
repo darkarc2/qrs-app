@@ -1,0 +1,39 @@
+{
+  "name": "qrs-desktop",
+  "version": "0.2.0",
+  "description": "Stream data through multiple series of QR codes",
+  "main": "main.js",
+  "author": "qifi-dev",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build:win": "electron-builder --win"
+  },
+  "devDependencies": {
+    "electron": "^33.0.0",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "dev.qifi.qrs",
+    "productName": "QRS",
+    "copyright": "Copyright © 2024 qifi-dev",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "www/**/*"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "portable",
+          "arch": ["x64"]
+        }
+      ]
+    },
+    "portable": {
+      "artifactName": "QRS-portable-${version}.exe"
+    }
+  }
+}
